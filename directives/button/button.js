@@ -37,7 +37,7 @@ angular.module('jqueryui.directives', [])
                });
             }
 
-            // Text
+            // Label
             if (angular.isDefined(attrs.label)) {
                scope.$watch('label', function (val) {
                   button.option('label', val ? val : oldLabel);
