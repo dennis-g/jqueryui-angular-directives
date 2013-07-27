@@ -1,0 +1,5 @@
+{
+   "dependencies": {
+      "https://github.com/dennis-g/jqueryui-angular-directives.git":   ">= 0.0.1"
+   }
+}

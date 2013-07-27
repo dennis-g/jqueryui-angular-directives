@@ -1,0 +1,22 @@
+{
+  "author": {
+    "name": "Dennis Garstka"
+  },
+  "name": "jqueryui-angular-directives",
+  "description": "Angular directives for jQueryUI widgets",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dennis-g/jqueryui-angular-directives.git"
+  },
+  "dependencies": {
+    "jquery": ">= 1.6.0",
+    "jquery-ui": ">= 1.10",
+    "angular": ">= 1.0.2"
+  },
+  "gitHead": "f9021991ae0ce7e6ff5a3455091e14c1fdbfb92b",
+  "readme": "jqueryui-angular-directives\n===========================\n\nAngular directives for jQueryUI widgets\n",
+  "readmeFilename": "README.md",
+  "_id": "jqueryui-angular-directives@0.0.1",
+  "commit": "f9021991ae0ce7e6ff5a3455091e14c1fdbfb92b"
+}
