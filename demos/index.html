@@ -17,10 +17,10 @@
 <div class="container">
     <h1>jQueryUI Angular Directives</h1>
     <hr>
-    <h2>Button</h2>
+    <h2>jq-button</h2>
 
     <div class="row-fluid well well-small">
-        <div class="span6">
+        <div class="span4">
             <form class="form-horizontal">
                 <div class="control-group">
                     <label class="control-label" for="button.disabled">Disabled</label>
@@ -53,10 +53,18 @@
                         <input type="text" id="button.label" ng-model="button.label">
                     </div>
                 </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="button.toggle">Toggle</label>
+
+                    <div class="controls">
+                        <input type="checkbox" id="button.toggle" ng-model="button.toggle">
+                    </div>
+                </div>
             </form>
         </div>
-        <div class="span6">
-            <strong>Attributes</strong>
+        <div class="span3 offset1">
+        <strong>Attributes</strong>
             <ul>
                 <li>ng-disabled</li>
                 <li>primary-icon</li>
@@ -64,11 +72,25 @@
                 <li>label</li>
             </ul>
         </div>
+        <div class="span4">
+            <pre>{{ button | json }}</pre>
+        </div>
     </div>
 
     <button jq-button ng-disabled="button.disabled" primary-icon="button.icons.primary" secondary-icon="button.icons.secondary" label="button.label">
         Button
     </button>
+
+    <input type="checkbox" id="check" jq-button ng-checked="button.toggle" label="button.label"/><label for="check">Toggle</label>
+
+    <hr>
+
+    <h2>jq-buttonset</h2>
+    <jq-buttonset>
+        <input type="radio" id="radio1" name="radio"><label for="radio1">Choice 1</label>
+        <input type="radio" id="radio2" name="radio" checked="checked"><label for="radio2">Choice 2</label>
+        <input type="radio" id="radio3" name="radio"><label for="radio3">Choice 3</label>
+    </jq-buttonset>
 
 </div>
 

@@ -8,11 +8,12 @@ angular.module('jqueryui.directives', [])
             text:          '=',
             label:         '=',
             primaryIcon:   '=',
-            secondaryIcon: '='
+            secondaryIcon: '=',
+            ngChecked:     '='
          },
          link:     function (scope, elm, attrs) {
             var button = $(elm[0]).button().data('ui-button'),
-               oldLabel = $.trim($(elm[0]).text());
+               oldLabel = $.trim($(elm).next('label').text()) || $.trim($(elm[0]).text());
 
             // Icons
             if (angular.isDefined(attrs.primaryIcon) || angular.isDefined(attrs.secondaryIcon)) {
@@ -44,6 +45,23 @@ angular.module('jqueryui.directives', [])
                });
             }
 
+            // Checkbox
+            if (angular.isDefined(attrs.type) && attrs.type === 'checkbox') {
+               if (angular.isDefined(attrs.ngChecked)) {
+                  scope.$watch('ngChecked', function (val) {
+                     $(elm[0]).prop('checked', val);
+                     button.refresh();
+                  });
+               }
+
+               //TODO: Update checkbox property is missing
+//               $(elm[0]).on('click', function (e) {
+//                  $(elm[0]).prop('checked', $(e.currentTarget).next().hasClass('ui-state-active'));
+//                  scope.ngChecked = $(e.currentTarget).next().hasClass('ui-state-active');
+//               });
+            }
+
+
             // Destroy
             scope.$on('destroy', function () {
                button.destroy();
@@ -54,11 +72,7 @@ angular.module('jqueryui.directives', [])
 
    .directive('jqButtonset', function () {
       return {
-         restrict: 'A',
-         scope:    {
-            ngDisabled: '=',
-            text:       '='
-         },
+         restrict: 'EA',
          link:     function (scope, elm, attrs) {
             var jqueryElm = $(elm[0]);
             $(jqueryElm).buttonset();
