@@ -1,0 +1,15 @@
+{
+   "author":       "Dennis Garstka",
+   "name":         "jqueryui-angular-directives",
+   "description":  "Angular directives for jQueryUI widgets",
+   "version":      "0.0.1",
+   "repository":   {
+      "type": "git",
+      "url":  "git://github.com/dennis-g/jqueryui-angular-directives.git"
+   },
+   "dependencies": {
+      "jquery":   ">= 1.6.0",
+      "jquery-ui": ">= 1.10",
+      "angular":  ">= 1.0.2"
+   }
+}
